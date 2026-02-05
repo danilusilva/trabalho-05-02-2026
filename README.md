@@ -13,10 +13,10 @@ Olá! Sou o Danilu, um desenvolvedor Junior focado em tecnologias Microsoft. Est
 ## 🏗️ Sobre a Esteira (CI/CD)
 Como desenvolvedor, entendo que código bom é código testado. Por isso, este portfólio conta com uma pipeline que:
 * Valida a sintaxe do código a cada Pull Request.
-* Garante que segredos (senhas) não sejam expostos.
+* Garante que arquivos sensíveis não sejam expostos.
 * Testa a compatibilidade em diferentes versões de ambiente.
 * Realiza o deploy automático assim que o código é aprovado.
 
 ## 🔗 Contato
 * **Portfólio Online:** [Clique aqui](https://danilusilva.github.io/trabalho-05-02-2026/)
-* **LinkedIn:** [Seu Link de Desenvolvedor](https://www.linkedin.com/in/SEU_USUARIO/)
+* **LinkedIn:** [Seu Link de Desenvolvedor](https://www.linkedin.com/in/danilusilva/)

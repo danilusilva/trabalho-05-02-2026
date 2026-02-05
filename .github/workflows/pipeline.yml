@@ -40,10 +40,9 @@ jobs:
 
       - name: Buscar termos sensíveis ou TODOs
         run: |
-          # O parâmetro --exclude-dir ignora a pasta .git
-          # O parâmetro --exclude ignora o próprio arquivo da pipeline
-          if grep -rEi "TODO|FIXME|senha|password" . --exclude-dir=.git --exclude=pipeline.yml; then
-            echo "ERRO: Remova os comentários de desenvolvedor ou senhas!"
+          # Adicionamos o README.md na lista de exclusão para ele não barrar o texto explicativo
+          if grep -rEi "TODO|FIXME|senha|password" . --exclude-dir=.git --exclude=pipeline.yml --exclude=README.md; then
+            echo "ERRO: Remova os comentários de desenvolvedor ou senhas do código-fonte!"
             exit 1
           fi
 

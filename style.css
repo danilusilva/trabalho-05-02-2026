@@ -1,10 +1,9 @@
-/* Variáveis para facilitar a manutenção */
 :root {
-    --primary-color: #2563eb;    /* Azul Moderno */
-    --secondary-color: #1e293b;  /* Cinza Escuro/Slate */
-    --bg-color: #f8fafc;
-    --text-color: #334155;
-    --white: #ffffff;
+    --bg-body: #0f172a;
+    --bg-card: #1e293b;
+    --primary-blue: #3b82f6;  /* Um azul um pouco mais brilhante para destacar no fundo escuro */
+    --text-white: #ffffff;    /* Branco puro para leitura perfeita */
+    --text-muted: #cbd5e1;    /* Cinza claro para descrição */
 }
 
 * {
@@ -14,94 +13,111 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    /* Fonte Poppins com peso 400 (normal) */
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-white);
     line-height: 1.6;
 }
 
-/* Header com Gradiente */
 header {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-    color: var(--white);
-    padding: 60px 20px;
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    padding: 80px 20px 40px;
     text-align: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
+    font-weight: 800; /* Peso extra negrito */
+    color: var(--text-white);
     margin-bottom: 10px;
     letter-spacing: -1px;
 }
 
-/* Seções do Site */
+header p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Estilização e Centralização da Foto */
+.profile-img {
+    display: block;        /* Garante que aceite margens laterais */
+    margin: 0 auto;        /* Centraliza horizontalmente */
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-blue);
+    object-fit: cover;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
 section {
-    max-width: 800px;
+    max-width: 850px;
     margin: 40px auto;
-    padding: 20px;
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid #334155;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--bg-color);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    color: var(--primary-blue);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-left: 5px solid var(--primary-blue);
+    padding-left: 15px;
 }
 
-/* Estilização da lista de habilidades */
 ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
 }
 
 ul li {
-    background: var(--bg-color);
-    padding: 8px 16px;
-    border-radius: 20px;
+    background: #334155;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
     font-weight: 600;
-    font-size: 0.9rem;
-    border: 1px solid #e2e8f0;
+    color: var(--text-white);
     transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 ul li:hover {
-    background: var(--primary-color);
-    color: var(--white);
-    transform: translateY(-3px);
+    background: var(--primary-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
 }
 
-/* Imagem de Perfil */
-.profile-img {
-    display: block;
-    margin: -50px auto 20px;
-    border: 5px solid var(--white);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-/* Rodapé e Links */
 footer {
     text-align: center;
-    padding: 40px 20px;
-    font-size: 0.9rem;
+    padding: 60px 20px;
+    background-color: #0b1120;
+}
+
+footer p {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-muted);
 }
 
 footer a {
-    color: var(--primary-color);
+    color: var(--primary-blue);
     text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 15px;
+    transition: 0.3s;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: var(--text-white);
+    text-shadow: 0 0 10px var(--primary-blue);
 }

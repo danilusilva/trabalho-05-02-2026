@@ -16,7 +16,7 @@ Como desenvolvedor, entendo que código bom é código testado. Por isso, este p
 * Garante que arquivos sensíveis não sejam expostos.
 * Testa a compatibilidade em diferentes versões de ambiente.
 * Realiza o deploy automático assim que o código é aprovado.
-senha
+
 ## 🔗 Contato
 * **Portfólio Online:** [Clique aqui](https://danilusilva.github.io/trabalho-05-02-2026/)
 * **LinkedIn:** [Meu Link de Desenvolvedor](https://www.linkedin.com/in/danilusilva/)

@@ -19,4 +19,4 @@ Como desenvolvedor, entendo que código bom é código testado. Por isso, este p
 
 ## 🔗 Contato
 * **Portfólio Online:** [Clique aqui](https://danilusilva.github.io/trabalho-05-02-2026/)
-* **LinkedIn:** [Seu Link de Desenvolvedor](https://www.linkedin.com/in/danilusilva/)
+* **LinkedIn:** [Meu Link de Desenvolvedor](https://www.linkedin.com/in/danilusilva/)

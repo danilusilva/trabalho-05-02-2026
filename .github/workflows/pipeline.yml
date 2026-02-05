@@ -71,3 +71,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notificar Falha no Deploy
+        if: failure()
+        run: |
+          echo "::error title=Deploy Failed::O deploy do seu portfólio .NET falhou! Verifique as permissões do GitHub Pages ou erros no build."

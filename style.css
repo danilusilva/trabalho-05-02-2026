@@ -1,3 +1,107 @@
-body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; color: #333; }
-header { text-align: center; padding: 20px; background: #f4f4f4; }
-img { border-radius: 50%; }
+/* Variáveis para facilitar a manutenção */
+:root {
+    --primary-color: #2563eb;    /* Azul Moderno */
+    --secondary-color: #1e293b;  /* Cinza Escuro/Slate */
+    --bg-color: #f8fafc;
+    --text-color: #334155;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header com Gradiente */
+header {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+/* Seções do Site */
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilização da lista de habilidades */
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+ul li {
+    background: var(--bg-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* Imagem de Perfil */
+.profile-img {
+    display: block;
+    margin: -50px auto 20px;
+    border: 5px solid var(--white);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Rodapé e Links */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

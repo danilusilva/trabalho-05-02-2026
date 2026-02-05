@@ -1,0 +1,72 @@
+name: CI/CD Portfolio
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # ETAPA 1: CI - Validação
+  validacao:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20] # Etapa 5: Matrix Strategy
+    
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Validar arquivo index.html
+        run: |
+          if [ ! -f index.html ]; then
+            echo "ERRO: index.html não encontrado!"
+            exit 1
+          fi
+
+      - name: Verificar arquivos pesados (>500KB)
+        run: |
+          files=$(find . -type f -not -path '*/.*' -size +500k)
+          if [ -n "$files" ]; then
+            echo "ERRO: Arquivos muito grandes encontrados: $files"
+            exit 1
+          fi
+
+      - name: Buscar termos sensíveis ou TODOs
+        run: |
+          if grep -rEi "TODO|FIXME|senha|password" .; then
+            echo "ERRO: Remova os comentários de desenvolvedor ou senhas!"
+            exit 1
+          fi
+
+      - name: Linter HTML
+        run: |
+          npm install -g htmlhint
+          htmlhint "index.html"
+
+  # ETAPA 2: CD - Publicação Automática
+  deploy:
+    needs: validacao
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
